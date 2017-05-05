@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Cat Life</title>
 
@@ -9,11 +9,11 @@
       background-image: url("gradient-background.jpg");
     }
 
-    img { max-width: 100%; }
+    img { max-width: 100%; } /*check book */
 
     .photo-container {
       width: 90%;
-      margin: auto;
+      margin: auto; /*centers it */
       border: solid 1px rgba(189, 63, 191, 0.62);
       display: flex;
       flex-wrap: wrap;
@@ -25,11 +25,25 @@
       to make calculating srcset easier for us :) */
       width: 55%;
     }
+
+    header {
+      /*color:white;
+      padding: 1rem
+      background-color: orange;
+      background-repeate: no-repeat;
+      background-image: url("space-header.jpg");
+      background-size: cover;
+      */
+
+      background: linear-gradient (left, FF3573, 6E40E8, 58DFFF, FFF229);}
   </style>
+
+
 </head>
 
 <body>
   <header>
+
     <h1>Cat Life</h1>
     <nav>
       <ul>
@@ -54,11 +68,19 @@
       </div>
 
       <div class="photo-frame">
-        <img src="dragon.jpg" alt="a fire-breathing cat">
+        <img srcset="dragon.jpg 1280w, dragon-800w.jpg 800w, dragon-400w.jpg 400w"
+              sizes="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
+              src="dragon-800w.jpg"
+              alt="really cool cat yelling 'yeah!'">
+        <!--original:
+        src="dragon.jpg" alt="a fire-breathing cat"> -->
       </div>
 
       <div class="photo-frame">
-        <img src="grr.jpg" alt="a cat making a weird face">
+        <img srcset="grr.jpg 1280w, grr-800w.jpg 800w, grr-400w.jpg 400w"
+              sizes="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
+              src="grr-800w.jpg"
+              alt="really cool cat yelling 'yeah!'">
       </div>
     </div>
   </section>
